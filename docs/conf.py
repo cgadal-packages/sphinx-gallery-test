@@ -10,10 +10,12 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-import sphinx_gallery
 import os
 import sys
 
+# Below is only needed if the module is not installed in the environement.
+# If it is not, you can either uncomment the line below, or install it using "pip3 install -e ./"
+# It is mandatory if you want compilation using github actions
 sys.path.insert(0, os.path.abspath("../"))
 
 # -- Project information -----------------------------------------------------
@@ -72,7 +74,7 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 # -- Options for Sphinx gallery ---------------------------------------------
 
 intersphinx_mapping = {
-    "python": ("https://docs.python.org/{.major}".format(sys.version_info), None),
+    "python": (f"https://docs.python.org/{sys.version_info.major}", None),
     "numpy": ("https://numpy.org/doc/stable/", None),
     "matplotlib": ("https://matplotlib.org/stable", None),
 }
@@ -107,7 +109,7 @@ html_theme_options = {
     "logo": {
         "text": "pyudv",
     },
-    "github_url": "https://github.com/cgadal-pythonpackages/sphinx-gallery-test",
+    "github_url": "https://github.com/cgadal-packages/sphinx-gallery-test",
 }
 
 html_static_path = ["_static"]

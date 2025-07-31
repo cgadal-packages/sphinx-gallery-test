@@ -21,6 +21,6 @@ help:
 
 clean:
 	rm -rf $(BUILDDIR)/*
-	rm -rf examples/
-	rm -rf _autosummary
-	rm -rf gen_modules
+	rm -rf _examples/*
+	rm -rf _autosummary/*
+	rm -rf _gen_modules/*
